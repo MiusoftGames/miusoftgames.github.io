@@ -10,14 +10,34 @@ export default function App({ Component, pageProps }) {
     glow.id = 'cursor-glow';
     document.body.appendChild(glow);
 
+    let currentX = 0, currentY = 0;
+    let targetX = 0, targetY = 0;
+    let started = false;
+    let rafId;
+
     const move = (e) => {
-      glow.style.left = `${e.clientX}px`;
-      glow.style.top = `${e.clientY}px`;
+      targetX = e.clientX;
+      targetY = e.clientY;
+
+      if (!started) {
+        currentX = targetX;
+        currentY = targetY;
+        started = true;
+        rafId = requestAnimationFrame(animate);
+      }
     };
+
+    function animate() {
+      currentX += (targetX - currentX) * 0.12;
+      currentY += (targetY - currentY) * 0.12;
+      glow.style.transform = `translate(${currentX - 300}px, ${currentY - 300}px)`;
+      rafId = requestAnimationFrame(animate);
+    }
 
     window.addEventListener('mousemove', move);
     return () => {
       window.removeEventListener('mousemove', move);
+      cancelAnimationFrame(rafId);
       glow.remove();
     };
   }, []);

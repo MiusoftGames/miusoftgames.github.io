@@ -2,16 +2,18 @@ import { useState } from 'react';
 import Link from 'next/link';
 import styles from './Header.module.css';
 import Image from 'next/image';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGamepad, faUser, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 // ─── Edit nav links here ───────────────────────
 const navLinks = [
-  { label: 'Games', href: '#games', target: "" },
-  { label: 'About', href: '#about', target: "" },
-  { label: 'Contact', href: '#contact', target: "" },
+  { label: 'Games',   href: '/#games',   target: '', icon: faGamepad },
+  { label: 'About',   href: '/#about',   target: '', icon: faUser    },
+  { label: 'Contact', href: '/#contact', target: '', icon: faEnvelope },
 ];
 
 const ctaLabel = 'Play Now';
-const ctaHref = '#games';
+const ctaHref = '/games';
 // ───────────────────────────────────────────────
 
 export default function Header() {
@@ -46,7 +48,7 @@ export default function Header() {
                   rel="noopener noreferrer"
                   className={styles.navLink}
                 >
-                  {link.label}
+                 <FontAwesomeIcon icon={link.icon} className={styles.navIcon} /> {link.label}
                 </a>
               </li>
             ))}
@@ -55,7 +57,7 @@ export default function Header() {
 
         {/* Desktop CTA */}
         <a href={ctaHref} className={styles.cta}>
-          {ctaLabel}
+         <FontAwesomeIcon icon={faGamepad} className={styles.ctaIcon} /> {ctaLabel}
         </a>
 
         {/* Mobile burger */}
@@ -91,12 +93,12 @@ export default function Header() {
             className={styles.mobileLink}
             onClick={() => setOpen(false)}
           >
-            {link.label}
+            <FontAwesomeIcon icon={link.icon} className={styles.navIcon} /> {link.label}
           </a>
         ))}
-        <a href={ctaHref} className={styles.mobileLink} onClick={() => setOpen(false)}>
-          {ctaLabel} →
-        </a>
+        {/* <a href={ctaHref} className={styles.mobileLink} onClick={() => setOpen(false)}>
+          {ctaLabel}
+        </a> */}
       </nav>
     </header>
   );

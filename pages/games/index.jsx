@@ -63,7 +63,7 @@ export default function GamesPage() {
             <main className={styles.page}>
                 <div className={styles.pageHeader}>
                     <div>
-                        <span className={styles.label}>All games</span>
+                        <span className={styles.label}>Play</span>
                         <h1 className={styles.title}>Games</h1>
                     </div>
                 </div>

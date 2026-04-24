@@ -59,6 +59,7 @@
   padding: 0.35rem 0.75rem;
   border-radius: 6px;
   transition: color 0.2s ease, background 0.2s ease;
+  gap: 0.4rem;
 }
 
 .navLink:hover {
@@ -152,6 +153,7 @@
 }
 
 @media (max-width: 720px) {
+
   .nav,
   .cta {
     display: none;

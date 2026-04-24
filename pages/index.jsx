@@ -9,9 +9,9 @@ export default function Home() {
   return (
     <Layout>
       <Hero />
-      <Games />
-      <About />
-      <Contact />
+      <Games id="games" />
+      <About id="about" />
+      <Contact id="contact" />
       {/* <div className={styles.bottomRow}>
       </div> */}
     </Layout>

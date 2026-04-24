@@ -1,10 +1,6 @@
-/* ─────────────────────────────────────────────
-   THEME — change design tokens here
-   ───────────────────────────────────────────── */
-
 :root {
   /* Colors */
-  --color-bg: #0a0a0f;
+  --color-bg: #06060a;
   --color-surface: #111118;
   --color-accent: #ffc107;
   --color-accent-border: rgba(255, 255, 255, 0.155);
