@@ -1,0 +1,12 @@
+.bottomRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.9rem;
+    padding-bottom: var(--space-section);
+}
+
+@media (max-width: 720px) {
+    .bottomRow {
+        grid-template-columns: 1fr;
+    }
+}

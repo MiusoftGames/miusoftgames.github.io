@@ -1,0 +1,113 @@
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  padding: 5rem 0 var(--space-section);
+  min-height: 100vh;
+}
+
+.imageCol {
+  flex: 0 0 auto;
+  width: clamp(220px, 40%, 340px);
+}
+
+.imageCol svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.textCol {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+}
+
+.tagline {
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  opacity: 0.8;
+  margin: 0 0 0.6rem;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 7vw, 5rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.accent {
+  color: var(--color-accent);
+}
+
+.sub {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin: 0.5rem 0 0;
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.7rem 1.9rem;
+  border: 2px solid var(--color-accent-border);
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 193, 7, 0.3), transparent);
+}
+
+.cta:hover {
+  border-color: var(--color-accent);
+  background: rgba(255, 193, 7, 0.04);
+}
+
+@media (max-width: 640px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 3rem 0 var(--space-section);
+    min-height: 100vh;
+  }
+
+  .imageCol {
+    width: clamp(160px, 55%, 240px);
+  }
+
+  .textCol {
+    align-items: center;
+  }
+}

@@ -1,0 +1,115 @@
+.section {
+    padding-bottom: var(--space-section);
+}
+
+.header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.label {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    opacity: 0.8;
+    margin-bottom: 6px;
+}
+
+.title {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--color-text);
+    margin: 0;
+}
+
+.accentLine {
+    width: 24px;
+    height: 2px;
+    background: var(--color-accent);
+    border-radius: 2px;
+    opacity: 0.5;
+    margin-bottom: 16px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.9rem;
+}
+
+.card {
+    border: 2px solid var(--color-border);
+    border-radius: var(--card-radius);
+    padding: 1.75rem;
+    background: rgba(255, 255, 255, 0.025);
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 193, 7, 0.3), transparent);
+}
+
+.card:hover {
+    border-color: var(--color-accent-border);
+    background: rgba(255, 255, 255, 0.035);
+}
+
+.cardLabel {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    opacity: 0.8;
+    margin-bottom: 12px;
+}
+
+.cardAccent {
+    width: 20px;
+    height: 2px;
+    background: var(--color-accent);
+    border-radius: 2px;
+    opacity: 0.5;
+    margin-bottom: 14px;
+}
+
+.cardTitle {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+}
+
+.text {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+    margin: 0;
+}
+
+@media (max-width: 560px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
