@@ -26,11 +26,11 @@ export default function GameCard({ game, onClick }) {
             </div>
             <div className={styles.info}>
                 <h3 className={styles.name}>{game.title}</h3>
-                <div className={styles.tags}>
+                {/* <div className={styles.tags}>
                     {game.tags.slice(0, 2).map((t) => (
                         <span key={t} className={styles.tag}>{t}</span>
                     ))}
-                </div>
+                </div> */}
             </div>
         </button>
     );

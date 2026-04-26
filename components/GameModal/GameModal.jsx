@@ -41,7 +41,12 @@ export default function GameModal({ game, onClose }) {
                                 <span key={t} className={styles.tag}>{t}</span>
                             ))}
                         </div>
-                        <span className={styles.year}>{game.year}</span>
+                        <span className={styles.year}>
+                            {new Date(game.publishedAt).toLocaleDateString('en-US', {
+                                month: 'short',
+                                year: 'numeric',
+                            })}
+                        </span>
                     </div>
 
                     <h2 className={styles.title}>{game.title}</h2>
