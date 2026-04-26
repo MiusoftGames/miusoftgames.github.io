@@ -24,12 +24,12 @@ const sections = [
     {
         id: 'children',
         title: "Children's Privacy (COPPA)",
-        content: `Our games are designed to be safe for users of all ages, including children under 13. Where optional features such as leaderboards collect a display name, we collect only the minimum information necessary to enable that feature. We do not knowingly collect sensitive personal information from children. Parents or guardians who believe their child has submitted personal information may contact us at miusoft.games@gmail.com to request its deletion.`,
+        content: `Our games are designed to be safe for users of all ages, including children under 13. Where optional features such as leaderboards collect a display name, we collect only the minimum information necessary to enable that feature. Any ads shown in our games are configured to comply with Google AdMob's family and children's ad policies, ensuring no behavioural tracking is used for users in children-directed experiences. Parents or guardians who believe their child has submitted personal information may contact us at miusoft.games@gmail.com to request its deletion.`,
     },
     {
         id: 'third-parties',
         title: 'Third-Party Services',
-        content: `Our games do not integrate any third-party SDKs, analytics tools, advertising networks, or social platforms. There are no in-app advertisements, no purchase tracking, and no connections to external services that could collect data on our behalf.`,
+        content: `Some of our games may include advertisements served by Google AdMob or sponsored content from brand partners we have carefully selected. These services may collect certain device information such as advertising identifiers to serve relevant ads. We only work with ad partners and sponsors whose content we consider appropriate and non-harmful for our audience. We do not display ads that are misleading, adult-oriented, or inappropriate for children. You can review Google's privacy practices at policies.google.com/privacy. Outside of advertising, our games do not integrate analytics tools, social SDKs, or any other third-party services that collect personal data.`,
     },
     {
         id: 'permissions',
