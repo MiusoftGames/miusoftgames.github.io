@@ -119,3 +119,26 @@
         grid-template-columns: 1fr;
     }
 }
+
+.cardLink {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.cardLink:hover .externalIcon {
+    opacity: 1;
+    transform: translate(1px, -1px);
+    color: var(--color-accent);
+}
+
+.externalIcon {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    opacity: 0.8;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}

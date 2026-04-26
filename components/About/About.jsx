@@ -1,6 +1,6 @@
 import styles from './About.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 
 export default function About({ id }) {
     return (
@@ -16,6 +16,8 @@ export default function About({ id }) {
             </div>
             <div className={styles.accentLine} />
             <div className={styles.grid}>
+
+                {/* Studio card — static */}
                 <div className={styles.card}>
                     <span className={styles.cardLabel}>Studio</span>
                     <div className={styles.cardAccent} />
@@ -25,14 +27,25 @@ export default function About({ id }) {
                         communication. Always experimenting.
                     </p>
                 </div>
-                <div className={styles.card}>
+
+                {/* Developer card — linked */}
+
+                <a href="https://kasunmiu.github.io"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`${styles.card} ${styles.cardLink}`}
+                >
                     <span className={styles.cardLabel}>Developer</span>
                     <div className={styles.cardAccent} />
                     <h3 className={styles.cardTitle}>Kasun Miuranga</h3>
                     <p className={styles.text}>
                         Solo developer behind Miusoft, handling everything from code and art to marketing. Learner at heart.
                     </p>
-                </div>
+                    <span className={styles.externalIcon}>
+                        <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                    </span>
+                </a>
+
             </div>
         </section>
     );
