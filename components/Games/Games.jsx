@@ -6,7 +6,7 @@ import { faGamepad, faCaretRight, faArrowRight } from '@fortawesome/free-solid-s
 
 const featured = [
     {
-        image: "/assets/images/games/prasino.png",
+        image: "/images/games/prasino.png",
         alt: "Prásino",
         title: "Prásino",
         description: "You are the LAST HOPE in a TRASH-CURSED WORLD",
@@ -14,7 +14,7 @@ const featured = [
         external: false,
     },
     {
-        image: "/assets/images/games/GhostMaker.png",
+        image: "/images/games/GhostMaker.png",
         alt: "Ghost Maker",
         title: "Ghost Maker",
         description: "Merge spooky items to create your ghost!",
@@ -22,7 +22,7 @@ const featured = [
         external: true,
     },
     {
-        image: "/assets/images/games/thundercuffed.png",
+        image: "/images/games/thundercuffed.png",
         alt: "THUNDERCUFFED",
         title: "THUNDERCUFFED",
         description: "Overpowered and under control? Not really.",
