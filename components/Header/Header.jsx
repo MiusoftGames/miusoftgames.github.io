@@ -3,13 +3,13 @@ import Link from 'next/link';
 import styles from './Header.module.css';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGamepad, faUser, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faGamepad, faUser, faHandshake } from '@fortawesome/free-solid-svg-icons';
 
 // ─── Edit nav links here ───────────────────────
 const navLinks = [
   { label: 'Games',   href: '/#games',   target: '', icon: faGamepad },
   { label: 'About',   href: '/#about',   target: '', icon: faUser    },
-  { label: 'Contact', href: '/#contact', target: '', icon: faEnvelope },
+  { label: 'Contact', href: '/#contact', target: '', icon: faHandshake },
 ];
 
 const ctaLabel = 'Play Now';

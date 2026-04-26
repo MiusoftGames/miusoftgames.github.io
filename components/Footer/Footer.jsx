@@ -1,7 +1,7 @@
 import styles from './Footer.module.css';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCopyright, faHeart, faGamepad, faUser, faEnvelope, faScaleBalanced } from '@fortawesome/free-solid-svg-icons';
+import { faCopyright, faHeart, faGamepad, faUser, faEnvelope, faScaleBalanced, faHandshake } from '@fortawesome/free-solid-svg-icons';
 import {
   faLinkedin,
   faXTwitter,
@@ -9,6 +9,7 @@ import {
   faFacebook,
   faInstagram,
   faTiktok,
+  faReddit,
 } from '@fortawesome/free-brands-svg-icons';
 
 // ─── Edit footer columns here ──────────────────
@@ -18,7 +19,7 @@ const columns = [
     links: [
       { label: 'Games', href: '/#games', icon: faGamepad },
       { label: 'About', href: '/#about', icon: faUser },
-      { label: 'Contact', href: '/#contact', icon: faEnvelope },
+      { label: 'Contact', href: '/#contact', icon: faHandshake },
       { label: 'Privacy', href: '/privacy-policy', icon: faScaleBalanced },
     ],
   },
@@ -31,6 +32,7 @@ const columns = [
       { label: 'Instagram', href: 'https://www.instagram.com/miusoft.games/', icon: faInstagram },
       { label: 'Facebook', href: 'https://web.facebook.com/miusoft/', icon: faFacebook },
       { label: 'Tiktok', href: 'https://www.tiktok.com/@miusoftgames/', icon: faTiktok },
+      { label: 'Reddit', href: 'https://www.reddit.com/user/MiusoftGames/', icon: faReddit },
       { label: 'X', href: 'https://x.com/MiusoftGames', icon: faXTwitter },
     ],
   },

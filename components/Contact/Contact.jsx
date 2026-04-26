@@ -1,23 +1,27 @@
 import styles from './Contact.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faHandshake } from '@fortawesome/free-solid-svg-icons';
 import {
+    faLinkedin,
     faXTwitter,
-    faInstagram,
-    faItchIo,
     faYoutube,
+    faFacebook,
+    faInstagram,
     faTiktok,
+    faReddit,
 } from '@fortawesome/free-brands-svg-icons';
 
-const communityEmail = 'miusoft@gmail.com';
+const communityEmail = 'miusoft.games@gmail.com';
 const serviceEmail = 'miusoft@gmail.com';
 
 const socials = [
-    { label: 'X', url: 'https://x.com/yourhandle', icon: faXTwitter },
-    { label: 'Instagram', url: 'https://instagram.com/yourhandle', icon: faInstagram },
-    { label: 'itch.io', url: 'https://yourname.itch.io', icon: faItchIo },
-    { label: 'YouTube', url: 'https://youtube.com/yourchannel', icon: faYoutube },
-    { label: 'TikTok', url: 'https://tiktok.com/@yourhandle', icon: faTiktok },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/company/miusoft', icon: faLinkedin },
+    { label: 'YouTube', href: 'https://www.youtube.com/@miusoft', icon: faYoutube },
+    { label: 'Instagram', href: 'https://www.instagram.com/miusoft.games/', icon: faInstagram },
+    { label: 'Facebook', href: 'https://web.facebook.com/miusoft/', icon: faFacebook },
+    { label: 'Tiktok', href: 'https://www.tiktok.com/@miusoftgames/', icon: faTiktok },
+    { label: 'Reddit', href: 'https://www.reddit.com/user/MiusoftGames/', icon: faReddit },
+    { label: 'X', href: 'https://x.com/MiusoftGames', icon: faXTwitter },
 ];
 
 export default function Contact({ id }) {
@@ -26,7 +30,10 @@ export default function Contact({ id }) {
             <div className={styles.header}>
                 <div>
                     <span className={styles.sectionLabel}>Say hello</span>
-                    <h2 className={styles.title}>Contact</h2>
+                    <h2 className={styles.title}>
+                        <FontAwesomeIcon icon={faHandshake} className={styles.titleIcon} />
+                        Contact
+                    </h2>
                 </div>
             </div>
             <div className={styles.accentLine} />
@@ -80,12 +87,13 @@ export default function Contact({ id }) {
                     </p>
 
                     <div className={styles.emailRow}>
-                        <div className={styles.emailIconBox}>
+                        <p>Coming soon...</p>
+                        {/* <div className={styles.emailIconBox}>
                             <FontAwesomeIcon icon={faEnvelope} />
                         </div>
-                        <a href={`mailto:${serviceEmail}`} className={styles.emailText}>
+                         <a href={`mailto:${serviceEmail}`} className={styles.emailText}>
                             {serviceEmail}
-                        </a>
+                        </a> */}
                     </div>
                 </div>
 

@@ -30,6 +30,12 @@
     margin: 0;
 }
 
+.titleIcon {
+    width: 0.7em;
+    margin-right: 0.4em;
+    opacity: 0.85;
+}
+
 .accentLine {
     width: 24px;
     height: 2px;

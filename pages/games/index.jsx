@@ -59,7 +59,7 @@ export default function GamesPage() {
 
     return (
         <Layout>
-            <Head><title>Games — Miusoft</title></Head>
+            <Head><title>Games</title></Head>
             <main className={styles.page}>
                 <div className={styles.pageHeader}>
                     <div>
