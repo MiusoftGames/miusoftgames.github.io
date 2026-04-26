@@ -1,0 +1,191 @@
+/* ── Layout — mirrors games page ── */
+.page {
+  padding: 5rem 0 var(--space-section);
+}
+
+.inner {
+  width: 100%;
+  max-width: 760px;
+}
+
+/* ── Page header — same pattern as games page ── */
+.pageHeader {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  opacity: 0.8;
+  margin-bottom: 6px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.accentLine {
+  width: 24px;
+  height: 2px;
+  background: var(--color-accent);
+  border-radius: 2px;
+  opacity: 0.5;
+  margin-bottom: 2rem;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+}
+
+.backLink:hover {
+  color: var(--color-accent);
+}
+
+/* ── Meta row ── */
+.metaRow {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  letter-spacing: 0.04em;
+  margin-bottom: 3rem;
+}
+
+.metaIcon {
+  font-size: 0.65rem;
+  color: var(--color-accent);
+  opacity: 1;
+}
+
+.metaDivider {
+  display: inline-block;
+  width: 1px;
+  height: 12px;
+  background: var(--color-border);
+  opacity: 0.5;
+}
+
+/* ── Sections ── */
+.sections {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.section {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.75rem 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.section:last-child {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.sectionNum {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: var(--color-accent);
+  opacity: 0.4;
+  padding-top: 3px;
+  flex-shrink: 0;
+  width: 24px;
+}
+
+.sectionBody {
+  flex: 1;
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+  margin: 0 0 0.5rem;
+}
+
+.sectionText {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* ── Contact block ── */
+.contactBlock {
+  font-style: normal;
+  font-family: var(--font-body);
+  font-size: 0.83rem;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--color-text-muted);
+  margin-top: 0.85rem;
+  padding: 0.85rem 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+}
+
+.emailLink {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: opacity 0.15s;
+}
+
+.emailLink:hover {
+  opacity: 0.75;
+}
+
+/* ── Footer note ── */
+.footerNote {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 300;
+  color: var(--color-text-muted);
+  margin-top: 3rem;
+  line-height: 1.6;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .pageHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .section {
+    gap: 1rem;
+  }
+}

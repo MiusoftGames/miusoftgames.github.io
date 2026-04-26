@@ -130,6 +130,12 @@
   padding: 0.25rem 0.7rem;
 }
 
+.linkIcon {
+  width: 1em;
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+}
+
 @media (max-width: 720px) {
   .top {
     flex-direction: column;
