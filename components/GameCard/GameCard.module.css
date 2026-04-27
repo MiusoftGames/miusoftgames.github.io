@@ -102,3 +102,23 @@
     border-radius: 4px;
     padding: 2px 7px;
 }
+
+.featuredBadge {
+    position: absolute;
+    top: 0;
+    left: 14px;
+    width: 28px;
+    background: linear-gradient(160deg, #f5c518, #e0930a);
+    color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 0 10px;
+    z-index: 2;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.35);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+}
+
+.featuredIcon {
+    font-size: 13px;
+}

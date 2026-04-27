@@ -10,19 +10,19 @@ const featured = [
         image: "/images/games/prasino.png",
         alt: "Prásino",
         title: "Prásino",
-        id:"prasino"
+        id: "prasino"
     },
     {
-        image: "/images/games/GhostMaker.png",
-        alt: "Ghost Maker",
-        title: "Ghost Maker",
-        id:"ghost-maker"
+        image: "/images/games/chakra.png",
+        alt: "Chakra",
+        title: "Chakra",
+        id: "chakra",
     },
     {
-        image: "/images/games/thundercuffed.png",
-        alt: "THUNDERCUFFED",
-        title: "THUNDERCUFFED",
-        id:"thundercuffed"
+        image: "/images/games/aim360.png",
+        alt: "Aim 360°",
+        title: "Aim 360°",
+        id: "aim-360",
     },
 ];
 

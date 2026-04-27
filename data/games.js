@@ -22,6 +22,7 @@ export const games = [
             web: "https://miusoft.itch.io/prasino",
             android: "https://play.google.com/store/apps/details?id=com.miusoftgames.prasino",
         },
+        featured: true,
     },
     {
         id: "sky-rings",
@@ -55,6 +56,7 @@ export const games = [
         platforms: {
             web: "https://miusoft.itch.io/chakra",
         },
+        featured: true,
     },
     {
         id: "bottlescurse",
@@ -77,6 +79,7 @@ export const games = [
         platforms: {
             web: "https://miusoft.itch.io/thundercuffed",
         },
+        featured: true,
     },
     {
         id: "yellow-bird",
@@ -156,6 +159,7 @@ export const games = [
             web: "https://miusoft.itch.io/aim-360",
             android: "https://play.google.com/store/apps/details?id=info.miusoft.aim360",
         },
+        featured: true,
     },
     {
         id: "vvv2",
@@ -167,6 +171,7 @@ export const games = [
         platforms: {
             web: "https://miusoft.itch.io/virtual-vesak-v2",
         },
+        featured: true,
     },
     {
         id: "vvv1",

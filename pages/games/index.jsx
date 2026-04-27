@@ -23,6 +23,7 @@ export default function GamesPage() {
     const [selected, setSelected] = useState(null);
     const [tagsOpen, setTagsOpen] = useState(false);
     const tagsRef = useRef(null);
+    const [sortBy, setSortBy] = useState('latest');
 
     useEffect(() => {
         if (!router.isReady) return;
@@ -60,14 +61,24 @@ export default function GamesPage() {
         });
     }, [search, activeTags, activePlatform]);
 
+    const sorted = useMemo(() => {
+        return [...filtered].sort((a, b) => {
+            if (sortBy === 'latest') return new Date(b.publishedAt) - new Date(a.publishedAt);
+            if (sortBy === 'oldest') return new Date(a.publishedAt) - new Date(b.publishedAt);
+            if (sortBy === 'featured') return (b.featured ? 1 : 0) - (a.featured ? 1 : 0);
+            return 0;
+        });
+    }, [filtered, sortBy]);
+
     const clearFilters = () => {
         setSearch('');
         setActiveTags([]);
         setActivePlatform(null);
         setTagsOpen(false);
+        setSortBy('latest');
     };
 
-    const hasFilters = search || activeTags.length > 0 || activePlatform;
+    const hasFilters = search || activeTags.length > 0 || activePlatform || sortBy !== 'latest';
 
     return (
         <Layout>
@@ -108,6 +119,20 @@ export default function GamesPage() {
                         ))}
 
                         <div className={styles.stripDivider} />
+                        {/* Sort */}
+                        {[
+                            { key: 'latest', label: 'Latest' },
+                            { key: 'oldest', label: 'Oldest' },
+                            { key: 'featured', label: 'Featured' },
+                        ].map((s) => (
+                            <button
+                                key={s.key}
+                                className={`${styles.pill} ${sortBy === s.key ? styles.pillActive : ''}`}
+                                onClick={() => setSortBy(s.key)}
+                            >
+                                {s.label}
+                            </button>
+                        ))}
 
                         {/* Tags dropdown */}
                         <div className={styles.tagsDropdown} ref={tagsRef}>
@@ -152,13 +177,13 @@ export default function GamesPage() {
 
                 {/* Count */}
                 <p className={styles.count}>
-                    {filtered.length} {filtered.length === 1 ? 'game' : 'games'}
+                    {sorted.length} {sorted.length === 1 ? 'game' : 'games'}
                 </p>
 
                 {/* Grid */}
                 {filtered.length > 0 ? (
                     <div className={styles.grid}>
-                        {filtered.map((game) => (
+                        {sorted.map((game) => (
                             <GameCard key={game.id} game={game} onClick={() => setSelected(game)} />
                         ))}
                     </div>
