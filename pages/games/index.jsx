@@ -9,6 +9,16 @@ import { faSearch, faXmark, faChevronDown, faTag } from '@fortawesome/free-solid
 import GameCard from '../../components/GameCard/GameCard';
 import { useRouter } from 'next/router';
 
+import SEO from '../../components/SEO/SEO'
+
+const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Games - Miusoft',
+    url: 'https://miusoftgames.github.io/games',
+    description: 'Games by Miusoft',
+}
+
 const platforms = [
     { key: 'web', label: 'PC / Web' },
     { key: 'android', label: 'Android' },
@@ -81,121 +91,129 @@ export default function GamesPage() {
     const hasFilters = search || activeTags.length > 0 || activePlatform || sortBy !== 'latest';
 
     return (
-        <Layout>
-            <Head><title>Games</title></Head>
-            <main className={styles.page}>
-                <div className={styles.pageHeader}>
-                    <div>
-                        <span className={styles.label}>Play</span>
-                        <h1 className={styles.title}>Games</h1>
+        <>
+            <SEO
+                title="Games - Miusoft"
+                description="Games by Miusoft"
+                canonical="https://miusoftgames.github.io/games"
+                jsonLd={jsonLd}
+            />
+            <Layout>
+                <main className={styles.page}>
+                    <div className={styles.pageHeader}>
+                        <div>
+                            <span className={styles.label}>Play</span>
+                            <h1 className={styles.title}>Games</h1>
+                        </div>
                     </div>
-                </div>
-                <div className={styles.accentLine} />
+                    <div className={styles.accentLine} />
 
-                <div className={styles.filters}>
-                    {/* Row 1: Search */}
-                    <div className={styles.searchWrap}>
-                        <FontAwesomeIcon icon={faSearch} className={styles.searchIcon} />
-                        <input
-                            type="text"
-                            placeholder="Search games..."
-                            value={search}
-                            onChange={(e) => setSearch(e.target.value)}
-                            className={styles.searchInput}
-                        />
-                    </div>
-
-                    {/* Row 2: Platform pills + Tags dropdown + Clear */}
-                    <div className={styles.filterStrip}>
-                        {/* Platform */}
-                        {platforms.map((p) => (
-                            <button
-                                key={p.key}
-                                className={`${styles.pill} ${activePlatform === p.key ? styles.pillActive : ''}`}
-                                onClick={() => setActivePlatform(activePlatform === p.key ? null : p.key)}
-                            >
-                                {p.label}
-                            </button>
-                        ))}
-
-                        <div className={styles.stripDivider} />
-                        {/* Sort */}
-                        {[
-                            { key: 'latest', label: 'Latest' },
-                            { key: 'oldest', label: 'Oldest' },
-                            { key: 'featured', label: 'Featured' },
-                        ].map((s) => (
-                            <button
-                                key={s.key}
-                                className={`${styles.pill} ${sortBy === s.key ? styles.pillActive : ''}`}
-                                onClick={() => setSortBy(s.key)}
-                            >
-                                {s.label}
-                            </button>
-                        ))}
-
-                        {/* Tags dropdown */}
-                        <div className={styles.tagsDropdown} ref={tagsRef}>
-                            <button
-                                className={`${styles.tagsToggle} ${activeTags.length > 0 ? styles.tagsToggleActive : ''}`}
-                                onClick={() => setTagsOpen((o) => !o)}
-                            >
-                                <FontAwesomeIcon icon={faTag} style={{ fontSize: '10px', opacity: 0.6 }} />
-                                Tags
-                                {activeTags.length > 0 && (
-                                    <span className={styles.tagsBadge}>{activeTags.length}</span>
-                                )}
-                                <FontAwesomeIcon
-                                    icon={faChevronDown}
-                                    className={`${styles.tagsChevron} ${tagsOpen ? styles.tagsChevronOpen : ''}`}
-                                />
-                            </button>
-
-                            {tagsOpen && (
-                                <div className={styles.tagsMenu}>
-                                    {allTags.map((tag) => (
-                                        <button
-                                            key={tag}
-                                            className={`${styles.pill} ${activeTags.includes(tag) ? styles.pillActive : ''}`}
-                                            onClick={() => toggleTag(tag)}
-                                        >
-                                            {tag}
-                                        </button>
-                                    ))}
-                                </div>
-                            )}
+                    <div className={styles.filters}>
+                        {/* Row 1: Search */}
+                        <div className={styles.searchWrap}>
+                            <FontAwesomeIcon icon={faSearch} className={styles.searchIcon} />
+                            <input
+                                type="text"
+                                placeholder="Search games..."
+                                value={search}
+                                onChange={(e) => setSearch(e.target.value)}
+                                className={styles.searchInput}
+                            />
                         </div>
 
-                        {/* Clear */}
-                        {hasFilters && (
-                            <button className={styles.clearBtn} onClick={clearFilters}>
-                                <FontAwesomeIcon icon={faXmark} /> Clear
-                            </button>
-                        )}
-                    </div>
-                </div>
+                        {/* Row 2: Platform pills + Tags dropdown + Clear */}
+                        <div className={styles.filterStrip}>
+                            {/* Platform */}
+                            {platforms.map((p) => (
+                                <button
+                                    key={p.key}
+                                    className={`${styles.pill} ${activePlatform === p.key ? styles.pillActive : ''}`}
+                                    onClick={() => setActivePlatform(activePlatform === p.key ? null : p.key)}
+                                >
+                                    {p.label}
+                                </button>
+                            ))}
 
-                {/* Count */}
-                <p className={styles.count}>
-                    {sorted.length} {sorted.length === 1 ? 'game' : 'games'}
-                </p>
+                            <div className={styles.stripDivider} />
+                            {/* Sort */}
+                            {[
+                                { key: 'latest', label: 'Latest' },
+                                { key: 'oldest', label: 'Oldest' },
+                                { key: 'featured', label: 'Featured' },
+                            ].map((s) => (
+                                <button
+                                    key={s.key}
+                                    className={`${styles.pill} ${sortBy === s.key ? styles.pillActive : ''}`}
+                                    onClick={() => setSortBy(s.key)}
+                                >
+                                    {s.label}
+                                </button>
+                            ))}
 
-                {/* Grid */}
-                {filtered.length > 0 ? (
-                    <div className={styles.grid}>
-                        {sorted.map((game) => (
-                            <GameCard key={game.id} game={game} onClick={() => setSelected(game)} />
-                        ))}
-                    </div>
-                ) : (
-                    <div className={styles.empty}>
-                        <p>No games match your filters.</p>
-                        <button className={styles.clearBtn} onClick={clearFilters}>Clear filters</button>
-                    </div>
-                )}
-            </main>
+                            {/* Tags dropdown */}
+                            <div className={styles.tagsDropdown} ref={tagsRef}>
+                                <button
+                                    className={`${styles.tagsToggle} ${activeTags.length > 0 ? styles.tagsToggleActive : ''}`}
+                                    onClick={() => setTagsOpen((o) => !o)}
+                                >
+                                    <FontAwesomeIcon icon={faTag} style={{ fontSize: '10px', opacity: 0.6 }} />
+                                    Tags
+                                    {activeTags.length > 0 && (
+                                        <span className={styles.tagsBadge}>{activeTags.length}</span>
+                                    )}
+                                    <FontAwesomeIcon
+                                        icon={faChevronDown}
+                                        className={`${styles.tagsChevron} ${tagsOpen ? styles.tagsChevronOpen : ''}`}
+                                    />
+                                </button>
 
-            {selected && <GameModal game={selected} onClose={() => setSelected(null)} />}
-        </Layout>
+                                {tagsOpen && (
+                                    <div className={styles.tagsMenu}>
+                                        {allTags.map((tag) => (
+                                            <button
+                                                key={tag}
+                                                className={`${styles.pill} ${activeTags.includes(tag) ? styles.pillActive : ''}`}
+                                                onClick={() => toggleTag(tag)}
+                                            >
+                                                {tag}
+                                            </button>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
+
+                            {/* Clear */}
+                            {hasFilters && (
+                                <button className={styles.clearBtn} onClick={clearFilters}>
+                                    <FontAwesomeIcon icon={faXmark} /> Clear
+                                </button>
+                            )}
+                        </div>
+                    </div>
+
+                    {/* Count */}
+                    <p className={styles.count}>
+                        {sorted.length} {sorted.length === 1 ? 'game' : 'games'}
+                    </p>
+
+                    {/* Grid */}
+                    {filtered.length > 0 ? (
+                        <div className={styles.grid}>
+                            {sorted.map((game) => (
+                                <GameCard key={game.id} game={game} onClick={() => setSelected(game)} />
+                            ))}
+                        </div>
+                    ) : (
+                        <div className={styles.empty}>
+                            <p>No games match your filters.</p>
+                            <button className={styles.clearBtn} onClick={clearFilters}>Clear filters</button>
+                        </div>
+                    )}
+                </main>
+
+                {selected && <GameModal game={selected} onClose={() => setSelected(null)} />}
+            </Layout>
+        </>
+
     );
 }

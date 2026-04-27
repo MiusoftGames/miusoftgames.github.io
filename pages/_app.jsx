@@ -3,6 +3,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 import { config } from '@fortawesome/fontawesome-svg-core';
 config.autoAddCss = false;
 import { useEffect } from 'react';
+import Head from 'next/head';
 
 export default function App({ Component, pageProps }) {
   useEffect(() => {
@@ -42,5 +43,14 @@ export default function App({ Component, pageProps }) {
     };
   }, []);
 
-  return <Component {...pageProps} />;
+  return (
+    <>
+      <Head>
+        {/* fallback defaults — individual pages override these */}
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:site_name" content="MiuSoft Games" />
+      </Head>
+      <Component {...pageProps} />
+    </>
+  );
 }

@@ -5,6 +5,16 @@ import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faShield } from '@fortawesome/free-solid-svg-icons';
 
+import SEO from '../../components/SEO/SEO'
+
+const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Games - Miusoft',
+    url: 'https://miusoftgames.github.io/games',
+    description: 'Games by Miusoft',
+}
+
 const CONTACT_EMAIL = 'miusoft.games@gmail.com';
 const COMPANY_NAME = 'Miusoft';
 const OWNER_NAME = 'Kasun Miuranga';
@@ -61,59 +71,66 @@ const sections = [
 
 export default function PrivacyPolicyPage() {
     return (
-        <Layout>
-            <Head><title>Privacy Policy</title></Head>
-            <main className={styles.page}>
+        <>
+            <SEO
+                title="Privacy Policy - Miusoft "
+                description="Privacy policy for Miusoft."
+                canonical="https://miusoftgames.github.io/privacy-policy"
+            />
+            <Layout>
+                <main className={styles.page}>
 
-                {/* Page header — same pattern as games page */}
-                <div className={styles.pageHeader}>
-                    <div>
-                        <span className={styles.label}>Legal</span>
-                        <h1 className={styles.title}>Privacy Policy</h1>
+                    {/* Page header — same pattern as games page */}
+                    <div className={styles.pageHeader}>
+                        <div>
+                            <span className={styles.label}>Legal</span>
+                            <h1 className={styles.title}>Privacy Policy</h1>
+                        </div>
+                        <Link href="/" className={styles.backLink}>
+                            <FontAwesomeIcon icon={faChevronLeft} />
+                            Back to home
+                        </Link>
                     </div>
-                    <Link href="/" className={styles.backLink}>
-                        <FontAwesomeIcon icon={faChevronLeft} />
-                        Back to home
-                    </Link>
-                </div>
-                <div className={styles.accentLine} />
+                    <div className={styles.accentLine} />
 
-                {/* Meta row */}
-                <div className={styles.metaRow}>
-                    <FontAwesomeIcon icon={faShield} className={styles.metaIcon} />
-                    <span>Effective date: {EFFECTIVE_DATE}</span>
-                    <span className={styles.metaDivider} />
-                    <span>Applies to all {COMPANY_NAME} games</span>
-                </div>
+                    {/* Meta row */}
+                    <div className={styles.metaRow}>
+                        <FontAwesomeIcon icon={faShield} className={styles.metaIcon} />
+                        <span>Effective date: {EFFECTIVE_DATE}</span>
+                        <span className={styles.metaDivider} />
+                        <span>Applies to all {COMPANY_NAME} games</span>
+                    </div>
 
-                {/* Sections */}
-                <div className={styles.sections}>
-                    {sections.map((section, i) => (
-                        <section key={section.id} id={section.id} className={styles.section}>
-                            <div className={styles.sectionNum}>0{i + 1}</div>
-                            <div className={styles.sectionBody}>
-                                <h2 className={styles.sectionTitle}>{section.title}</h2>
-                                <p className={styles.sectionText}>{section.content}</p>
-                                {section.isContact && (
-                                    <address className={styles.contactBlock}>
-                                        <strong>{COMPANY_NAME}</strong> : operated by {OWNER_NAME}
-                                        <br />
-                                        <a href={`mailto:${CONTACT_EMAIL}`} className={styles.emailLink}>
-                                            {CONTACT_EMAIL}
-                                        </a>
-                                    </address>
-                                )}
-                            </div>
-                        </section>
-                    ))}
-                </div>
+                    {/* Sections */}
+                    <div className={styles.sections}>
+                        {sections.map((section, i) => (
+                            <section key={section.id} id={section.id} className={styles.section}>
+                                <div className={styles.sectionNum}>0{i + 1}</div>
+                                <div className={styles.sectionBody}>
+                                    <h2 className={styles.sectionTitle}>{section.title}</h2>
+                                    <p className={styles.sectionText}>{section.content}</p>
+                                    {section.isContact && (
+                                        <address className={styles.contactBlock}>
+                                            <strong>{COMPANY_NAME}</strong> : operated by {OWNER_NAME}
+                                            <br />
+                                            <a href={`mailto:${CONTACT_EMAIL}`} className={styles.emailLink}>
+                                                {CONTACT_EMAIL}
+                                            </a>
+                                        </address>
+                                    )}
+                                </div>
+                            </section>
+                        ))}
+                    </div>
 
-                {/* Bottom note */}
-                <p className={styles.footerNote}>
-                    This policy applies to all games and applications published by {COMPANY_NAME} on the Google Play Store, Apple App Store, and any other platform.
-                </p>
+                    {/* Bottom note */}
+                    <p className={styles.footerNote}>
+                        This policy applies to all games and applications published by {COMPANY_NAME} on the Google Play Store, Apple App Store, and any other platform.
+                    </p>
 
-            </main>
-        </Layout>
+                </main>
+            </Layout>
+        </>
+
     );
 }
