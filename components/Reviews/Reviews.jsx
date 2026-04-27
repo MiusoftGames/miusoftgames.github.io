@@ -50,11 +50,15 @@ export default function Reviews({ id }) {
     const next = useCallback(() => goTo((current + 1) % total, 'next'), [current, total, goTo]);
     const prev = useCallback(() => goTo((current - 1 + total) % total, 'prev'), [current, total, goTo]);
 
-    useEffect(() => {
+    /* useEffect(() => {
         if (paused) return;
         const t = setInterval(next, INTERVAL);
         return () => clearInterval(t);
-    }, [paused, next]);
+    }, [paused, next]); */
+
+    useEffect(() => {
+        return;
+    }, []);
 
     const review = reviews[current];
     const color = getGameColor(review.gameId);
