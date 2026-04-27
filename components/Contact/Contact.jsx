@@ -1,6 +1,6 @@
 import styles from './Contact.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope, faHandshake } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import {
     faLinkedin,
     faXTwitter,
@@ -31,7 +31,7 @@ export default function Contact({ id }) {
                 <div>
                     <span className={styles.sectionLabel}>Say hello</span>
                     <h2 className={styles.title}>
-                        <FontAwesomeIcon icon={faHandshake} className={styles.titleIcon} />
+                        <FontAwesomeIcon icon={faPaperPlane} className={styles.titleIcon} />
                         Contact
                     </h2>
                 </div>

@@ -1,6 +1,6 @@
 import styles from './About.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
+import { faLightbulb, faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 
 export default function About({ id }) {
     return (
@@ -9,7 +9,7 @@ export default function About({ id }) {
                 <div>
                     <span className={styles.label}>Who we are</span>
                     <h2 className={styles.title}>
-                        <FontAwesomeIcon icon={faUser} className={styles.titleIcon} />
+                        <FontAwesomeIcon icon={faLightbulb} className={styles.titleIcon} />
                         About
                     </h2>
                 </div>

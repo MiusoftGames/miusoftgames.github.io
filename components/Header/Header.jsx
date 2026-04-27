@@ -3,13 +3,14 @@ import Link from 'next/link';
 import styles from './Header.module.css';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGamepad, faUser, faHandshake } from '@fortawesome/free-solid-svg-icons';
+import { faGamepad, faUser, faHandshake, faQuoteLeft, faLightbulb, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 
 // ─── Edit nav links here ───────────────────────
 const navLinks = [
-  { label: 'Games',   href: '/#games',   target: '', icon: faGamepad },
-  { label: 'About',   href: '/#about',   target: '', icon: faUser    },
-  { label: 'Contact', href: '/#contact', target: '', icon: faHandshake },
+  { label: 'Games', href: '/#games', target: '', icon: faGamepad },
+  { label: 'Reviews', href: '/#reviews', target: '', icon: faQuoteLeft },
+  { label: 'About', href: '/#about', target: '', icon: faLightbulb },
+  { label: 'Contact', href: '/#contact', target: '', icon: faPaperPlane },
 ];
 
 const ctaLabel = 'Play Now';
@@ -48,7 +49,7 @@ export default function Header() {
                   rel="noopener noreferrer"
                   className={styles.navLink}
                 >
-                 <FontAwesomeIcon icon={link.icon} className={styles.navIcon} /> {link.label}
+                  <FontAwesomeIcon icon={link.icon} className={styles.navIcon} /> {link.label}
                 </a>
               </li>
             ))}
@@ -57,7 +58,7 @@ export default function Header() {
 
         {/* Desktop CTA */}
         <a href={ctaHref} className={styles.cta}>
-         <FontAwesomeIcon icon={faGamepad} className={styles.ctaIcon} /> {ctaLabel}
+          <FontAwesomeIcon icon={faGamepad} className={styles.ctaIcon} /> {ctaLabel}
         </a>
 
         {/* Mobile burger */}

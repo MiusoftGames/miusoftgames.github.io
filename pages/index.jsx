@@ -11,8 +11,8 @@ export default function Home() {
     <Layout>
       <Hero />
       <Games id="games" />
-      <About id="about" />
       <Reviews id="reviews" />
+      <About id="about" />
       <Contact id="contact" />
       {/* <div className={styles.bottomRow}>
       </div> */}
