@@ -4,6 +4,7 @@ import styles from '../styles/Home.module.css';
 import About from '../components/About/About';
 import Contact from '../components/Contact/Contact';
 import Games from '../components/Games/Games';
+import Reviews from '../components/Reviews/Reviews';
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <Hero />
       <Games id="games" />
       <About id="about" />
+      <Reviews id="reviews" />
       <Contact id="contact" />
       {/* <div className={styles.bottomRow}>
       </div> */}
