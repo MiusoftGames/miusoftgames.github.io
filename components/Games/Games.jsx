@@ -3,35 +3,36 @@ import Link from 'next/link';
 import styles from './Games.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGamepad, faCaretRight, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { useRouter } from 'next/router';
 
 const featured = [
     {
         image: "/images/games/prasino.png",
         alt: "Prásino",
         title: "Prásino",
-        description: "You are the LAST HOPE in a TRASH-CURSED WORLD",
-        link: "/games/prasino",
-        external: false,
+        id:"prasino"
     },
     {
         image: "/images/games/GhostMaker.png",
         alt: "Ghost Maker",
         title: "Ghost Maker",
-        description: "Merge spooky items to create your ghost!",
-        link: "https://miusoft.itch.io/ghost-maker",
-        external: true,
+        id:"ghost-maker"
     },
     {
         image: "/images/games/thundercuffed.png",
         alt: "THUNDERCUFFED",
         title: "THUNDERCUFFED",
-        description: "Overpowered and under control? Not really.",
-        link: "https://miusoft.itch.io/thundercuffed",
-        external: true,
+        id:"thundercuffed"
     },
 ];
 
 export default function Games({ id }) {
+    const router = useRouter();
+
+    const handleCardClick = (game) => {
+        router.push(`/games?open=${game.id}`);
+    };
+
     return (
         <section className={styles.section} id={id}>
             <div className={styles.header}>
@@ -49,10 +50,9 @@ export default function Games({ id }) {
                 {featured.map((game) => (
 
                     <a key={game.title}
-                        href={game.link}
+                        href="#"
+                        onClick={(e) => { e.preventDefault(); handleCardClick(game); }}
                         className={styles.card}
-                        target={game.external ? '_blank' : undefined}
-                        rel={game.external ? 'noopener noreferrer' : undefined}
                     >
                         <div className={styles.imageWrap}>
                             <Image
@@ -64,7 +64,6 @@ export default function Games({ id }) {
                         </div>
                         <div className={styles.info}>
                             <h3 className={styles.gameTitle}>{game.title}</h3>
-                           {/*  <p className={styles.gameDesc}>{game.description}</p> */}
                         </div>
                     </a>
                 ))}

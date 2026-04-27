@@ -7,6 +7,7 @@ import GameModal from '../../components/GameModal/GameModal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faXmark, faChevronDown, faTag } from '@fortawesome/free-solid-svg-icons';
 import GameCard from '../../components/GameCard/GameCard';
+import { useRouter } from 'next/router';
 
 const platforms = [
     { key: 'web', label: 'PC / Web' },
@@ -15,12 +16,23 @@ const platforms = [
 ];
 
 export default function GamesPage() {
+    const router = useRouter();
     const [search, setSearch] = useState('');
     const [activeTags, setActiveTags] = useState([]);
     const [activePlatform, setActivePlatform] = useState(null);
     const [selected, setSelected] = useState(null);
     const [tagsOpen, setTagsOpen] = useState(false);
     const tagsRef = useRef(null);
+
+    useEffect(() => {
+        if (!router.isReady) return;
+        const { open } = router.query;
+        if (open) {
+            const match = games.find((g) => g.id === open);
+            if (match) setSelected(match);
+            router.replace('/games', undefined, { shallow: true });
+        }
+    }, [router.isReady, router.query]);
 
     const toggleTag = (tag) => {
         setActiveTags((prev) =>
