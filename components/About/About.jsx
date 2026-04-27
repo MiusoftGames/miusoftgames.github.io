@@ -17,15 +17,20 @@ export default function About({ id }) {
             <div className={styles.accentLine} />
             <div className={styles.grid}>
 
-                {/* Studio card — static */}
+                {/* Studio card */}
                 <div className={styles.card}>
-                    <span className={styles.cardLabel}>Studio</span>
-                    <div className={styles.cardAccent} />
-                    <h3 className={styles.cardTitle}>Miusoft</h3>
-                    <p className={styles.text}>
-                        An indie game studio exploring games as a medium for meaningful
-                        communication. Always experimenting.
-                    </p>
+                    <div className={styles.imagePanel}>
+                        <img src="/images/about/miusoft.png" alt="Miusoft" className={styles.cardImage} />
+                    </div>
+                    <div className={styles.cardContent}>
+                        <span className={styles.cardLabel}>Studio</span>
+                        <div className={styles.cardAccent} />
+                        <h3 className={styles.cardTitle}>Miusoft</h3>
+                        <p className={styles.text}>
+                            An indie game studio exploring games as a medium for meaningful
+                            communication. Always experimenting.
+                        </p>
+                    </div>
                 </div>
 
                 {/* Developer card — linked */}
@@ -35,15 +40,20 @@ export default function About({ id }) {
                     rel="noopener noreferrer"
                     className={`${styles.card} ${styles.cardLink}`}
                 >
-                    <span className={styles.cardLabel}>Developer</span>
-                    <div className={styles.cardAccent} />
-                    <h3 className={styles.cardTitle}>Kasun Miuranga</h3>
-                    <p className={styles.text}>
-                        Solo developer behind Miusoft, handling everything from code and art to marketing. Learner at heart.
-                    </p>
-                    <span className={styles.externalIcon}>
-                        <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-                    </span>
+                    <div className={styles.imagePanel}>
+                        <img src="/images/about/kasunmiu.png" alt="Kasun Miuranga" className={styles.cardImage} />
+                    </div>
+                    <div className={styles.cardContent}>
+                        <span className={styles.cardLabel}>Developer</span>
+                        <div className={styles.cardAccent} />
+                        <h3 className={styles.cardTitle}>Kasun Miuranga</h3>
+                        <p className={styles.text}>
+                            Solo developer behind Miusoft, handling everything from code and art to marketing. Learner at heart.
+                        </p>
+                        <span className={styles.externalIcon}>
+                            <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                        </span>
+                    </div>
                 </a>
 
             </div>
