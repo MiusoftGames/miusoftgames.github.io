@@ -2,10 +2,11 @@ import { useEffect } from 'react';
 import Image from 'next/image';
 import styles from './GameModal.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faXmark, faDesktop } from '@fortawesome/free-solid-svg-icons';
+import { faXmark, faDesktop, faGlobe } from '@fortawesome/free-solid-svg-icons';
 import { faAndroid, faApple } from '@fortawesome/free-brands-svg-icons';
 
 const platformMeta = {
+    gameweb: { icon: faGlobe, label: 'Official Website', short: 'Website' },
     web: { icon: faDesktop, label: 'Play on PC / Web', short: 'PC / Web' },
     android: { icon: faAndroid, label: 'Get on Android', short: 'Android' },
     ios: { icon: faApple, label: 'Get on iOS', short: 'iOS' },

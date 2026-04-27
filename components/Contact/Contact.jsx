@@ -63,7 +63,7 @@ export default function Contact({ id }) {
                         {socials.map((s) => (
                             <li key={s.label}>
 
-                                <a href={s.url}
+                                <a href={s.href}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className={styles.socialBtn}

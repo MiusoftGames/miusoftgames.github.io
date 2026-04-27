@@ -19,6 +19,7 @@ export const games = [
         publishedAt: "2025-10-20",
         tags: ["Survival", "Story", "Godot", "2D"],
         platforms: {
+            gameweb: "https://sample",
             web: "https://miusoft.itch.io/prasino",
             android: "https://play.google.com/store/apps/details?id=com.miusoftgames.prasino",
         },
