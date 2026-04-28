@@ -6,10 +6,12 @@ import reviews from '/data/reviews';
 import { games } from '/data/games';
 import 'flag-icons/css/flag-icons.min.css';
 
-// One color per game id — add more as needed
 const GAME_COLORS = {
-    "ghost-maker": "#fbbf24",  // warm amber
-    "prasino": "#86efac",  // soft green
+    "ghost-maker": "#a78bfa",
+    "prasino": "#22c55e",
+    "thundercuffed": "#faeb60",
+    "chakra": "#f97316",
+    "vvv2": "#44a5ef",
 };
 
 function getGameColor(gameId) {
@@ -121,8 +123,7 @@ export default function Reviews({ id }) {
                             {/* Corner link icon */}
                             {gameLink && (
                                 <a
-                                    href={gameLink}
-                                    target="_blank"
+                                    href={`/games?open=${game.id}`}
                                     rel="noopener noreferrer"
                                     className={styles.gameLink}
                                     aria-label={`Visit ${game.title}`}
