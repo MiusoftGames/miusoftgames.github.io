@@ -1,11 +1,12 @@
 import Image from 'next/image';
 import styles from './GameCard.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGlobe, faAndroid } from '@fortawesome/free-brands-svg-icons';
-import { faStar, faDesktop } from '@fortawesome/free-solid-svg-icons';
+import { faAndroid } from '@fortawesome/free-brands-svg-icons';
+import { faStar, faDesktop, faGlobe } from '@fortawesome/free-solid-svg-icons';
 import { faAndroid as faAndroidBrand } from '@fortawesome/free-brands-svg-icons';
 
 const platformIcons = {
+    gameweb: { icon: faGlobe, label: 'Website'},
     web: { icon: faDesktop, label: 'PC / Web' },
     android: { icon: faAndroidBrand, label: 'Android' },
     ios: { icon: faGlobe, label: 'iOS' },
