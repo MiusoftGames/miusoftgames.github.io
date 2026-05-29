@@ -48,7 +48,7 @@ export default function App({ Component, pageProps }) {
       <Head>
         {/* fallback defaults — individual pages override these */}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta property="og:site_name" content="MiuSoft Games" />
+        <meta property="og:site_name" content="Miusoft Games" />
       </Head>
       <Component {...pageProps} />
     </>
