@@ -1,10 +1,22 @@
 export const games = [
     {
+        id: "featherfly",
+        image: "/images/games/featherfly.png",
+        title: "FeatherFly",
+        description: "Fly. Fail. Learn. Explore Galle Fort.",
+        publishedAt: "2026-06-26",
+        tags: ["Casual", "Puzzle", "Godot", "2D"],
+        platforms: {
+            web: "https://miusoftgames.github.io/FeatherFly",
+        },
+        featured: true,
+    },
+    {
         id: "dogsbigchance",
         image: "/images/games/dogsbigchance.png",
         title: "Dog's Big Chance",
         description: "Every distraction is a connection. Made for Game Dev TV Game Jam 2026.",
-        publishedAt: "2026-05-25",   // YYYY-MM-DD format
+        publishedAt: "2026-05-25",
         tags: ["Cozy", "Jam", "Godot", "2D"],
         platforms: {
             web: "https://miusoft.itch.io/dogs-big-chance",
@@ -15,7 +27,7 @@ export const games = [
         image: "/images/games/GhostMaker.png",
         title: "Ghost Maker",
         description: "Merge spooky items to create your ghost! A relaxing merge puzzle game with a Halloween twist.",
-        publishedAt: "2026-04-01", 
+        publishedAt: "2026-04-01",
         tags: ["Casual", "Puzzle", "Merge", "Godot", "2D"],
         platforms: {
             web: "https://miusoft.itch.io/ghost-maker",
