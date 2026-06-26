@@ -7,7 +7,7 @@ export const games = [
         publishedAt: "2026-06-26",
         tags: ["Casual", "Puzzle", "Godot", "2D"],
         platforms: {
-            web: "https://miusoftgames.github.io/FeatherFly",
+            gameweb: "https://miusoftgames.github.io/FeatherFly",
         },
         featured: true,
     },
